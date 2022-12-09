@@ -16,4 +16,4 @@ jobs:
       - run: |
           cat /etc/hosts
       - run: |
-          curl -vvv intl.fusionsolar.huawei.com
+          ping intl.fusionsolar.huawei.com
