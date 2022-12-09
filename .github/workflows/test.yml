@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          cat /etc/resolv.conf
+          nslookup intl.fusionsolar.huawei.com 
