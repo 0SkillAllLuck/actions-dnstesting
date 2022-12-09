@@ -16,6 +16,8 @@ jobs:
       - run: |
           cat /etc/systemd/resolved.conf
       - run: |
+          cat /run/systemd/resolve/stub-resolv.conf
+      - run: |
           sudo resolvectl dns eth0 1.1.1.1
       - run: |
           sudo systemctl daemon-reload
