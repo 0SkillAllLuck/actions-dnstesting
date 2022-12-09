@@ -12,10 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          cat /etc/resolv.conf
+          nslookup huawei.com 
       - run: |
-          sudo sed -i '1s;^;nameserver 1.1.1.1\n;' /etc/resolv.conf
+          nslookup fusionsolar.huawei.com 
       - run: |
-          cat /etc/resolv.conf
-      - run: |
-          nslookup intl.fusionsolar.huawei.com 
+          nslookup intl.fusionsolar.huawei.com
