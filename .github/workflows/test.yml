@@ -14,7 +14,7 @@ jobs:
       - run: |
           cat /etc/resolv.conf
       - run: |
-          sudo echo -e "nameserver 1.1.1.1\n$(cat /etc/resolv.conf)" > /etc/resolv.conf
+          sudo sed -i '1s;^;nameserver 1.1.1.1\n;' /etc/resolv.conf
       - run: |
           cat /etc/resolv.conf
       - run: |
