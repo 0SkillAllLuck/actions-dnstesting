@@ -16,8 +16,8 @@ jobs:
       - run: |
           cat /etc/systemd/resolved.conf
       - run: |
-          resolvectl status
+          resolvectl dns eth0 1.1.1.1
       - run: |
-          systemd-resolve --status
+          resolvectl status
       - run: |
           nslookup intl.fusionsolar.huawei.com 
