@@ -18,6 +18,10 @@ jobs:
       - run: |
           sudo resolvectl dns eth0 1.1.1.1
       - run: |
-          sudo resolvectl status
+          sudo systemctl daemon-reload
+          sudo systemctl restart systemd-networkd
+          sudo systemctl restart systemd-resolved
+          sudo resolvectl flush-caches --no-pager
+          sudo resolvectl status --no-pager
       - run: |
           nslookup intl.fusionsolar.huawei.com 
