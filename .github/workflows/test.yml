@@ -14,20 +14,8 @@ jobs:
       - run: |
           cat /etc/resolv.conf
       - run: |
-          cat /etc/systemd/resolved.conf
+          echo -e "nameserver 1.1.1.1\n$(cat /etc/resolv.conf)" > /etc/resolv.conf
       - run: |
-          cat /run/systemd/resolve/stub-resolv.conf
-      - run: |
-          sudo resolvectl dns eth0 1.1.1.1
-      - run: |
-          sudo systemctl daemon-reload
-      - run: |
-          sudo systemctl restart systemd-networkd
-      - run: |
-          sudo systemctl restart systemd-resolved
-      - run: |
-          sudo resolvectl flush-caches --no-pager
-      - run: |
-          sudo resolvectl status --no-pager
+          cat /etc/resolv.conf
       - run: |
           nslookup intl.fusionsolar.huawei.com 
