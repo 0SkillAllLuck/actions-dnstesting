@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          sed -i -e '$a90.84.191.21 intl.fusionsolar.huawei.com ' /etc/hosts
+          sudo sed -i -e '$a90.84.191.21 intl.fusionsolar.huawei.com ' /etc/hosts
       - run: |
           nslookup huawei.com 
       - run: |
