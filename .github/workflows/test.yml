@@ -17,3 +17,5 @@ jobs:
           nslookup fusionsolar.huawei.com 
       - run: |
           nslookup intl.fusionsolar.huawei.com
+      - run: |
+          nslookup region01eu5.fusionsolar.huawei.com
