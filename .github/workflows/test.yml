@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          sudo sed -i -e '$a90.84.191.21 intl.fusionsolar.huawei.com' /etc/hosts
+          echo "$(dig +short eu5.fusionsolar.huawei.com) intl.fusionsolar.huawei.com" | sudo tee -a /etc/hosts
       - run: |
           cat /etc/hosts
       - run: |
